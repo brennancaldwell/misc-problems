@@ -22,18 +22,11 @@ function ListNode(val, next) {
 
 */
 
-function listNode(val, next) {
-  var list = {};
-  list.val = (val === undefined ? 0 : val);
-  list.next = (next === undefined ? null: next);
-  return list;
-}
-
 var addTwoNumbers = function(l1, l2) {
   var l1Num = numConverter(l1, []);
   var l2Num = numConverter(l2, []);
-
-  return listConverter(l1Num + l2Num);
+  var addition = add(l1Num, l2Num);
+  return listConverter(addition);
 };
 
 var numConverter = function(node, array) {
@@ -41,11 +34,11 @@ var numConverter = function(node, array) {
     array.unshift(node.val);
     node = node.next;
   }
-  return Number(array.join(''));
+  return array.join('');
 };
 
-var listConverter = function(number) {
-  var array = number.toString().split('').reverse();
+var listConverter = function(string) {
+  var array = string.split('').reverse();
   var list;
   var currentNode;
   for (var i = 0; i < array.length; i++) {
@@ -53,13 +46,13 @@ var listConverter = function(number) {
     newNode.val = Number(array[i]);
     newNode.next = null;
     if (list === undefined) {
-      list = newNode;
-      currentNode = newNode;
+        list = newNode;
+        currentNode = newNode;
     }
     currentNode === newNode ? currentNode : currentNode.next = newNode;
     currentNode = newNode;
   }
-    return list;
+  return list;
 };
 
 function add(str1, str2) {
@@ -70,7 +63,7 @@ function add(str1, str2) {
   if (str2length > str1length) {
     var temp = str2;
     str2 = str1;
-    str2 = temp
+    str1 = temp
   }
 
   var carry = 0;
@@ -84,15 +77,16 @@ function add(str1, str2) {
     b = parseInt(str2[str2.length - 1 - i]);
     b = (b) ? b : 0;
     temp = (carry + a + b).toString();
-    digitSum = temp[temp.length - 1];
-    carry = parseInt(temp.slice(0, temp.length-1));
+    digitSum = temp.charAt(temp.length - 1);
+    carry = parseInt(temp.substr(0, temp.length-1));
     carry = (carry) ? carry : 0;
 
-    sum = (i === str1.length - 1) ? temp + sum : digitSum + sum;
+
+    result = (i === str1.length - 1) ? temp + result : digitSum + result;
   }
 
-  return sum;
-}
+  return result;
+};
 
 
 
