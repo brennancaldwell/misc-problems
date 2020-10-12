@@ -13,9 +13,14 @@ const findNumbers = (nums) => {
       digitCount++;
       number = Math.floor(number / 10);
     }
-    digitCount % 2 === 0
-    ? result++
-    : result;
+    if (digitCount % 2 === 0) {
+      result++;
+    }
   }
   return result;
 }
+
+/*
+Interesting side-note: using the ternary operator in lines 16-17 slows
+things down: current runs 72ms, faster than 93.16% of Leetcode submissions.
+*/
