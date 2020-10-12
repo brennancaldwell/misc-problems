@@ -39,9 +39,17 @@ const maxSubArray = (nums) => {
   let largest = -Infinity, currentSum = -Infinity;
   for (let i = 0; i < nums.length; i++) {
     currentSum = Math.max(currentSum += nums[i], nums[i]);
-    if (largest < currentSum) {
-      largest = currentSum;
-    }
+    largest = Math.max(currentSum, largest);
   }
   return largest;
 }
+
+/*
+
+Kadane's Algorithm
+
+I suppose my solution was essentially that -- at each index, the
+maxSubArray is either going to be the number at that index or the sum
+of the number at that index and the max array of what came before.
+
+*/
