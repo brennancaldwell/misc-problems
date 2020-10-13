@@ -23,4 +23,7 @@ const findNumbers = (nums) => {
 /*
 Interesting side-note: using the ternary operator in lines 16-17 slows
 things down: current runs 72ms, faster than 93.16% of Leetcode submissions.
+
+Inless I'm mistaken, time complexity is O(a log k), where a is the length
+of the array, and k is the size of the array-item number.
 */
