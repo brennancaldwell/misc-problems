@@ -31,7 +31,7 @@ const trap = (topo) => {
   }
 
   heightMax = 0;
-  for (let r = topo.length - 1; r >= 0; i++) {
+  for (let r = topo.length - 1; r >= 0; r++) {
     heightMax = Math.max(heightMax, topo[r]);
     maxFromR[r] = heightMax;
   }
