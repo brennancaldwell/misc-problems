@@ -103,3 +103,9 @@ class MaxHeap {
     return this.store.length - 1;
   }
 }
+
+/*
+Here, built a MaxHeap class. Could more easily have solved this problem
+using arrays, but that would have necessitated sorting the whole array with
+each new rock addition.
+*/
