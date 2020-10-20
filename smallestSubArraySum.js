@@ -17,5 +17,5 @@ const smallest_subarray_with_given_sum = function(s, arr) {
       start++;
     }
   }
-  return num;
+  return num === Infinity ? 0 : num;
 };
