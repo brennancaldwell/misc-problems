@@ -52,6 +52,41 @@ Explanation: The root node's value is 5 but its right child's value is 4.
 
 
 const isValidBST = (root) => {
+  const traverse = (node, lower, upper) => {
+      if (node === null) {
+          return true;
+      }
+
+
+      if (node.left !== null && node.val <= node.left.val) {
+          return false;
+      }
+
+
+      if (node.right !== null && node.val >= node.right.val) {
+          return false;
+      }
+
+      if (upper !== null && node.val >= upper) {
+          return false;
+      }
+
+      if (lower !== null && node.val <= lower) {
+        return false;
+    }
+
+      return traverse(node.left, lower, node.val) && traverse(node.right, node.val, upper);
+  }
+
+  return traverse(root, null, null);
+};
+
+/*
+Somewhat inefficient solution, but it gets the job done. Particularly proud
+of using tracking objects to keep track of greater than/less than properties
+further down the tree branches.
+
+const isValidBST = (root) => {
   const traverse = (node, tracker) => {
       if (node === null) {
           return true;
@@ -81,8 +116,8 @@ const isValidBST = (root) => {
   return traverse(root, {});
 };
 
-/*
-Somewhat inefficient solution, but it gets the job done. Particularly proud
-of using tracking objects to keep track of greater than/less than properties
-further down the tree branches.
+Solution code has revealed (of course) -- why use an object when you could
+simply use lower and upper limit variables?
+Changing the code as such made things substantially faster.
+
 */
