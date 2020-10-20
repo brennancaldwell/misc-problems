@@ -118,6 +118,6 @@ const isValidBST = (root) => {
 
 Solution code has revealed (of course) -- why use an object when you could
 simply use lower and upper limit variables?
-Changing the code as such made things substantially faster.
+Changing the code as such made things substantially faster -- about 100 ms.
 
 */
