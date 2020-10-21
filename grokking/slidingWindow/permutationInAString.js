@@ -82,11 +82,11 @@ const findPermutation = (str, pattern) => {
     }
 
     if (end >= pattern.length - 1) {
-      if (charMap[start] !== undefined) {
-        if (charMap[start] === 0) {
+      if (charMap[str[start]] !== undefined) {
+        if (charMap[str[start]] === 0) {
           matched--;
         }
-         charMap[start]++
+         charMap[str[start]]++
       }
       start++;
     }
