@@ -135,8 +135,8 @@ class MinHeap {
 }
 
 /*
-Time Complexity: O(n * m), where n represents length of array and m
-represents length of each list.
+Time Complexity: O((n * m) log m) -- where m represents length of
+individual lists / height of heap
 Space Complexity: O(n * m)
 
 Think I'm finally understanding the purpose of a binary heap -- the
@@ -144,4 +144,6 @@ ability to track maxes and mins -- and to have the heap automatically
 re-arrange your store in O(log n) time is quite powerful. Of course,
 far easier to do this when your language (i.e. Java) already has a
 MinHeap / Priority Queue structure built-in.
+
+
 */
