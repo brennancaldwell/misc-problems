@@ -23,4 +23,18 @@ const pairWithTargetSum = (arr, target) => {
 /*
 Time complexity O(n)
 Space complexity O(1)
+
+Other approach
+O(n) time and space
+
+const pairWithTargetSum = (arr, target) => {
+  const track = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (track[target - arr[i]] !== undefined) {
+      return [track[target - arr[i]], i];
+    }
+    track[arr[i]] = i
+  }
+  return [-1, -1]
+}
 */
