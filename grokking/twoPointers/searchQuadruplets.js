@@ -36,3 +36,8 @@ const search_quadruplets = function(arr, target) {
   }
   return quadruplets;
 };
+
+/*
+Time O(n^3)
+Space O(n)
+*/
