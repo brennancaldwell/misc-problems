@@ -10,7 +10,7 @@ sum of the triplet with the smallest sum.
 */
 
 const tripletSumCloseToTarget = (arr, targetSum) => {
-  let sum = 0, diff = Infinity;
+  let diff = Infinity;
   arr.sort((a, b) => a - b);
   for (let i = 0; i < arr.length; i++) {
     let left = i + 1, right = arr.length - 1;
