@@ -13,8 +13,13 @@ const canAttendAllAppointments = (intervals) => {
     }
   }
   return true;
-}
+};
 
 const overlap = (intervalA, intervalB) => {
-  return intervalA.end <= intervalB.start;
-}
+  return intervalA.end < intervalB.start;
+};
+
+/*
+Time O(n log n)
+Space O(1)
+*/
