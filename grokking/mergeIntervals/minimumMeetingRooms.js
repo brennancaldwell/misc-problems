@@ -36,4 +36,7 @@ My (naive) approach, based on how I would solve this without code: by
 looking at the time slots themselves and finding out how many meetings
 are going on concurrently. The greatest number at any given time will
 represent the number of rooms we need.
+Time O(n * m), where m represents the length of time represented within
+the intervals.
+Space O(1);
 */
