@@ -55,4 +55,39 @@ O(n) Time
 O(1) Space
 
 Other solution I had used O(log n) space.
+
+Own implementation of the above from memory!
+var isPalindrome = function(head) {
+  let fast = head, slow = head;
+
+  while (fast !== null && fast.next !== null) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  let backHalf = reverseList(slow);
+  fast = head;
+
+  while (backHalf !== null) {
+    if (fast.val !== backHalf.val) {
+      return false;
+    } else {
+      fast = fast.next;
+      backHalf = backHalf.next;
+    }
+  }
+
+  return true;
+};
+
+const reverseList = (head) => {
+  let prev = null, current = head, next = null;
+  while (current !== null) {
+    next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+  return prev;
+}
 */
