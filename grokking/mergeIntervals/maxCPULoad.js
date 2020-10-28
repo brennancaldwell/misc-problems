@@ -42,3 +42,8 @@ console.log(`Maximum CPU load at any time: ${find_max_cpu_load(
   [new Job(6, 7, 10), new Job(2, 4, 11), new Job(8, 12, 15)])}`)
 console.log(`"Maximum CPU load at any time: ${find_max_cpu_load(
   [new Job(1, 4, 2), new Job(2, 4, 1), new Job(3, 6, 5)])}`)
+
+  /*
+  Time O(n log n)
+  Space O(n)
+  */
