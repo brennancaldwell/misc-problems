@@ -39,4 +39,24 @@ represent the number of rooms we need.
 Time O(n * m), where m represents the length of time represented within
 the intervals.
 Space O(1);
+
+Their solution uses a minHeap sorted by end time to keep track of
+overlapping meetings.
+
+function minMeetingRooms(meetings) {
+  meetings.sort((a, b) => a.start - b.start);
+  let minRooms = 0, minHeap = new Heap([], null, (a, b) => a.end - b.end);
+
+  for (let i = 0; i < meetings.length; i++) {
+    while (minHeap.length > 0 && meetings[i].start >= minHeap.peek().end) {
+      minHeap.pop();
+    }
+
+    minHeap.push(meetings[i]);
+
+    minRooms = Math.max(minRooms, maxHeap.length);
+  }
+
+  return minRooms;
+}
 */
