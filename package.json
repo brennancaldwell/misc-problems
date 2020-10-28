@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/brennancaldwell/misc-problems/issues"
   },
-  "homepage": "https://github.com/brennancaldwell/misc-problems#readme"
+  "homepage": "https://github.com/brennancaldwell/misc-problems#readme",
+  "dependencies": {
+    "collections": "^5.1.12"
+  }
 }
