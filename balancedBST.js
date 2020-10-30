@@ -21,3 +21,39 @@ const height = (node, depth) => {
   if (node === null) return depth - 1;
   return Math.max(height(node.left, depth + 1), height(node.right, depth + 1));
 };
+
+/*
+Gonna do my best to reproduce a different solution below
+
+const heightCheck = (root) => {
+  let obj = {};
+  if (root === null) {
+    obj.status = true;
+    obj.height = -1;
+    return obj;
+  }
+
+  let left = heightCheck(root.left);
+  if (left.status === false) {
+    return left;
+  }
+
+  let right = heightCheck(root.right);
+  if (right.status === false || Math.abs(left.height - right.height) > 1) {
+    obj.status = false;
+    obj.height = -1;
+    return obj;
+  }
+
+  obj.status = true;
+  obj.height = Math.max(left.height, right.height) + 1;
+
+  return obj;
+}
+
+const isBalanced = (root) => {
+  if (!root) return true;
+  let res = heightCheck(root);
+  return res.status;
+}
+*/
