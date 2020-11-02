@@ -9,6 +9,8 @@ reverse it too.
 */
 
 function reverseKElements(head, k) {
+  if (k <= 1 || head === null) return head;
+
   let endPrevList = null,
   currListHead = head,
   i = k,
@@ -47,3 +49,44 @@ function reverseKElements(head, k) {
 
   return head;
 }
+
+/*
+Solution code from Grokking:
+
+function reverseEveryKElements(head, k) {
+  if (k <= 1 || head === null) return head;
+
+  let current = head, previous = null;
+
+  while (true) {
+    const lastNodeOfPreviousPart = previous;
+    const lastNodeOfSubList = current;
+    let next = null, i = 0;
+
+    while(current !== null && i < k) {
+      next = current.next;
+      current.next = previous;
+      previous = current;
+      current = next;
+      i++;
+    }
+
+    if (lastNodeOfPreviousPart !== null) {
+      lastNodeOfPreviousPart = previous;
+    } else {
+      head = previous;
+    }
+
+    lastNodeOfSubList.next = current;
+
+    if (current === null) {
+      break;
+    }
+
+    previous = lastNodeOfSubList;
+  }
+
+  return head;
+}
+
+*/
