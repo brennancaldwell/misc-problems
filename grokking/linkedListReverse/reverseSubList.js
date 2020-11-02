@@ -42,3 +42,44 @@ function reverseSubList(head, p, q) {
 
   return head;
 }
+
+/*
+Grokking bases its solution on the fact that the one test case uses
+a linked list with incrementing values. As such, rather than testing
+against values, we test against a counter:
+
+const reverse = (head, p, q) => {
+  if (p === q) return head;
+  let current = head, previous = null, i = 0;
+
+  while (current !== null && i < p - 1) {
+    previous = current;
+    current = current.next;
+    i++;
+  }
+
+  const endPreList = previous;
+  const endSubList = current;
+
+  let next = null;
+  i = 0;
+
+  while (current !== null && i < q - p + 1) {
+    next = current.next;
+    current.next = previous;
+    previous = current;
+    current = next;
+    i++
+  }
+
+  if (endPreList !== null) {
+    endPreList.next = previous;
+  } else {
+    head = previous;
+  }
+
+  endSubList.next = current;
+
+  return head;
+}
+*/
