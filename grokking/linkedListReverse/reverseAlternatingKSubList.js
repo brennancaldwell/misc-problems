@@ -11,6 +11,8 @@ reverse it too.
 */
 
 function reverseAlternateKElements(head, k) {
+  if (k <= 1 || head === null) return head;
+
   let current = head,
   next = null,
   prev = null,
@@ -48,3 +50,51 @@ function reverseAlternateKElements(head, k) {
 
   return head;
 }
+
+/*
+
+Grokking solution code:
+
+function reverseAlternateKElementsSublist(head, k) {
+  if (k <= 1 || head === null) {
+    return head;
+  }
+
+  let current = head, previous = null;
+
+  while (true) {
+    const lastNodeOfPreviousPart = previous;
+    const lastNodeOfSubList = current;
+    let next = null, i = 0;
+
+    while (current !== null && i < k) {
+      next = current.next;
+      current.next = previous;
+      previous = current;
+      current = next;
+      i += 1;
+    }
+
+    if (lastNodeOfPreviousPart !== null) {
+      lastNodeOfPreviousPart.next = previous;
+    } else {
+      head = previous;
+    }
+
+    lastNodeOfSubList.next = current;
+
+    i = 0;
+
+    while (current !== null && i < k) {
+      previous = current;
+      current = current.next;
+      i += 1;
+    }
+
+    if (current === null) {
+      break;
+    }
+  }
+  return head;
+}
+*/
