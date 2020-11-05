@@ -8,9 +8,9 @@ left to right in separate sub-arrays.
 
 function traverse(root) {
 
-  if (root === null) return root;
-
   let result = [], queue = [];
+
+  if (root === null) return result;
 
   queue.push([root, 0]);
 
@@ -35,3 +35,34 @@ function traverse(root) {
 
   return result;
 }
+
+/*
+Similar implementation in solution code
+
+function traverse(root) {
+  let result = [];
+  if (root === null) return result;
+
+  const queue = [];
+  queue.push(root);
+  while (queue.length > 0) {
+    const levelSize = queue.length, currentLevel = [];
+    for (i = 0; i < levelSize; i++) {
+      currentNode = queue.shift();
+      currentLevel.push(currentNode.val)
+
+      if (currentNode.left !== null) {
+        queue.push(currentNode.left);
+      }
+
+      if (currentNode.right !== null) {
+        queue.push(currentNode.right);
+      }
+    }
+    result.push(currentLevel);
+  }
+
+  return result;
+}
+
+*/
