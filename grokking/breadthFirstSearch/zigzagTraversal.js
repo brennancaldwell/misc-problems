@@ -37,3 +37,8 @@ function zigzagTraverse (root) {
 
   return result;
 }
+
+/*
+Solution code does essentially the same thing -- however, it keeps track
+of levels through a simple leftToRight boolean
+*/
