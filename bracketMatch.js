@@ -37,4 +37,27 @@ function bracketMatch(text) {
   } else {
     return Math.abs(open - close);
   }
+};
+
+/*
+Solution code for Bracket Match:
+
+function bracketMatch(text) {
+  let diffCounter  0, ans = 0, n = text.length;
+
+  for (let i = 0; i < n; i++) {
+    if (text[i] === '(') {
+      diffCounter++;
+    } else if (text[i] === ')') {
+      diffCounter--;
+    }
+
+    if (diffCounter < 0) {
+      diffCounter += 1;
+      ans += 1;
+    }
+  }
+
+  return ans + diffCounter;
 }
+*/
