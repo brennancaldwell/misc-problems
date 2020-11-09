@@ -17,4 +17,11 @@ function topKFrequent(nums, k) => {
   return [... new Set(nums)]
           .sort((a, b) => trackHash[b] - trackHash[a])
           .slice(0, k);
-}
+};
+
+/*
+Time Complexity: O(n log n) -- sort
+Space: O(n)
+Runtime 80ms (faster than 97.92%)
+Memory 40.8, less than 8.56%
+*/
