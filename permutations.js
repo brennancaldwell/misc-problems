@@ -18,4 +18,9 @@ function permute (nums) {
     }
   })([], nums);
   return result;
-}
+};
+
+/*
+Time 96MS, faster than 59.63%
+Memory 41.1, less than 5.26%
+*/
