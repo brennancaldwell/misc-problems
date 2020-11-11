@@ -28,3 +28,15 @@ function wordBreak(s, wordDict) {
   return dp[s.length];
 };
 
+/*
+Want to take a second to pause over this. Similar, I believe, to the DP
+approach to minimum letter changes to convert one word to another. We
+populate an array with "false" (representing the length of the string plus
+one), then convert the first array item to "true". We then use two nested
+loops: one which tracks the "word end" letter and another which tracks the
+word start whenever we reach the point at which 1) a completed word comes
+immediately before our current word (dp[wordStart] = true) and our current
+word also appears in the dictionary, we set dp[wordEnd] to true. By using
+this approach, we avoid issues that come up when we have strings like "b"
+and "bb" -- both values in the dp array would contain true values.
+*/
