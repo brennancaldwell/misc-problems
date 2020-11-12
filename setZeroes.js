@@ -13,6 +13,47 @@ Could you devise a constant space solution?
 */
 
 function setZeroes(matrix) {
+  let isCol = false;
+  for (let r = 0; r < matrix.length; r++) {
+    if (matrix[r][0] === 0) isCol = true;
+    for (let c = 1; c < matrix[r].length; c++) {
+      if (matrix[r][c] === 0) {
+        matrix[0][c] = 0;
+        matrix[r][0] = 0;
+      }
+    }
+  }
+
+  for (let r = 1; r < matrix.length; r++) {
+    for (let c = 1; c < matrix[r].length; c++) {
+      if (matrix[r][0] === 0 || matrix[0][c] === 0) {
+        matrix[r][c] = 0;
+      }
+    }
+  }
+
+  if (matrix[0][0] === 0) {
+    for (let c = 0; c < matrix[0].length; c++) {
+      matrix[0][c] = 0;
+    }
+  }
+
+  if (isCol) {
+    for (let r = 0; r < matrix.length; r++) {
+      matrix[r][0] = 0;
+    }
+  }
+
+  return matrix;
+};
+
+/*
+Above: A constant space solution.
+
+Below: my bit of a naive approach, but it does the job -- issue of course
+that it uses more than constant memory.
+
+function setZeroes(matrix) {
   const rows = {}, columns = {};
   for (let r = 0; r < matrix.length; r++) {
     for (let c = 0; c < matrix[r].length; c++) {
@@ -31,3 +72,4 @@ function setZeroes(matrix) {
   }
   return matrix;
 };
+*/
