@@ -25,3 +25,33 @@ function connectLevelOrderSiblings(root) {
     }
   }
 }
+
+/*
+Slight difference in solution code:
+
+function connect(root) {
+  const queue = [];
+  queue.push(root);
+
+  while (queue.length) {
+    const levelLength = queue.length;
+    let previousNode = null;
+
+    for (let i = 0; i < levelLength; i++) {
+      const current = queue.shift();
+      if (previousNode) {
+        previousNode.next = current;
+      }
+      previousNode = current;
+
+      if (current.left) {
+        queue.push(current.left);
+      }
+
+      if (current.right) {
+        queue.push(current.right);
+      }
+    }
+  }
+}
+*/
