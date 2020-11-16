@@ -31,3 +31,10 @@ function connectAllSiblings(root) {
 
   previousNode.next = null;
 }
+
+/*
+Looks like in the solution code they modified the initial tree structure
+to include a "next" param set to "null" -- whereas what I do here is
+define the next param for each tree node. I can see why that would be
+best practice -- though in my code it would eliminate at most one line (32).
+*/
