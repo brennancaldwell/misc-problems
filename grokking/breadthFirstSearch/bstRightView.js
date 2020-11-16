@@ -12,7 +12,7 @@ const treeRightView = (root) => {
 
   while (queue.length) {
     const levelLength = queue.length;
-    result.push(queue[levelLength - 1].value);
+    result.push(queue[levelLength - 1];
 
     for (let i = 0; i < levelLength; i++) {
       const current = queue.shift();
@@ -28,3 +28,32 @@ const treeRightView = (root) => {
 
   return result;
 };
+
+/*
+Solution code a little cleaner, but functionally the same:
+
+function treeRightView(root) {
+  const result = [], queue = [];
+  if (root === null) return result;
+
+  queue.push(root);
+
+  while (queue.length) {
+    const levelSize = queue.length;
+    for (i = 0; i < levelSize; i++) {
+      const currentNode = queue.shift();
+      if (i === levelSize - 1) {
+        result.push(currentNode);
+      }
+      if (currentNode.left) {
+        queue.push(currentNode.left);
+      }
+      if (currentNode.right) {
+        queue.push(currentNode.right);
+      }
+    }
+  }
+
+  return result;
+}
+*/
