@@ -12,3 +12,8 @@ function findSumOfPathNumbers(root, sum = 0) {
   if (!root.left && !root.right) return sum;
   return findSumOfPathNumbers(root.left, sum * 10) + findSumOfPathNumbers(root.right, sum * 10);
 }
+
+/*
+Time Complexity: O(n)
+Space Complexity: O(n) --> recursion stack, worst case
+*/
