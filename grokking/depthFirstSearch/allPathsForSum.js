@@ -24,3 +24,9 @@ const findPathsRecursion = (node, sum, currentPath, allPaths) => {
     findPathsRecursion(node.right, sum - node.value, currentPath.slice(), allPaths);
   }
 }
+
+/*
+Another possible implementation here is to pop out the most recent addition
+to current path after our recursive calls. Then, we'll push currentPath.
+slice() into allPaths. This will reduce space complexity.
+*/
