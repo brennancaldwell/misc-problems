@@ -10,3 +10,15 @@ function findPath(root, sequence) {
   if (sequence.length === 1 && !root.left && !root.right) return true;
   return findPath(root.left, sequence.slice(1)) || findPath(root.right, sequence.slice(1));
 };
+
+/*
+Solution code uses a helper recursive function that uses index of sequence.
+Rather than reproducing, I'll modify my code to use that rather than slice.
+
+function findPath(root, sequence, index = 0) {
+  if (!root || root.value !== sequence[index]) return false;
+  if (index >= sequence.length) return false;
+  if (!root.left && !root.right && index === sequence.length - 1) return true;
+  return findPath(root.left, sequence, index + 1) || findPath(root.right, sequence, index + 1)
+}
+*/
