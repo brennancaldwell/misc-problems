@@ -25,4 +25,9 @@ function countPaths(root, S, currentPath = []) {
   currentPath.pop();
 
   return pathCount;
-}
+};
+
+/*
+Time: O(n)
+Space: O(n) (recursion stack)
+*/
