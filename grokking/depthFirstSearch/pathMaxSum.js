@@ -24,3 +24,10 @@ function findMaximumPathSum(root) {
   }
   return pathSumRecursive(root);
 };
+
+/*
+My solution is again virtually the same as the provided solution.
+
+Time O(n)
+Space O(n)
+*/
