@@ -33,3 +33,17 @@ class TreeDiameter {
     return diameterRecursive(root);
   }
 };
+
+/*
+Solution code is similarly ponderous from a time perspective.
+O(n) Time, O(n) space
+
+My solution is a bit clunky: assigning 'context', returning something
+different if the current node is the root.
+
+Solution code solves this by separating out the recursive function,
+which will maintain its this binding.
+
+The findDiameter function therefore merely calls the recursive function
+and returns this.treeDiameter.
+*/
