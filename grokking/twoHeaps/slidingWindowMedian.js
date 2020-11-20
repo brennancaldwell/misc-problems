@@ -85,3 +85,20 @@ console.log(`Sliding window medians are: ${result}`);
 slidingWindowMedian = new SlidingWindowMedian();
 result = slidingWindowMedian.findSlidingWindowMedian([1, 2, -1, 3, 5], 3);
 console.log(`Sliding window medians are: ${result}`);
+
+/*
+Time: O(n * k) (elements times length of sliding window)
+Space: O(k) -- we only ever hold as many elements as indicated by K
+
+Similar to finding the median of a number stream, the idea here is to keep
+track of our numbers in two heaps, adding medians to the results array once
+the sliding window is K elements long, removing earlier elements as they
+fall out of the window.
+
+A note on heap deletion: Deleting an intermediary number works almost the
+same as deleting the root, with one crucial difference. You replace the
+deleted item with the final item in the heap and then consider both parents
+and children. If (in the case of a min heap) your final item is smaller than
+the parent, you "bubble up" until you find the right place. If it's larger
+than the children, we "bubble down".
+*/
