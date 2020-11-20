@@ -19,7 +19,7 @@ class MedianOfStream {
   }
 
   insertNum(num) {
-    if (this.maxHeap.length === 0 || num <= this.maxHeap.peak()) {
+    if (this.maxHeap.length === 0 || num <= this.maxHeap.peek()) {
       this.maxHeap.push(num);
     } else {
       this.minHeap.push(num);
@@ -40,3 +40,11 @@ class MedianOfStream {
   }
 };
 
+var medianOfAStream = new MedianOfStream()
+medianOfAStream.insertNum(3)
+medianOfAStream.insertNum(1)
+console.log(`The median is: ${medianOfAStream.findMedian()}`)
+medianOfAStream.insertNum(5)
+console.log(`The median is: ${medianOfAStream.findMedian()}`)
+medianOfAStream.insertNum(4)
+console.log(`The median is: ${medianOfAStream.findMedian()}`)
