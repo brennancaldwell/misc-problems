@@ -48,3 +48,20 @@ medianOfAStream.insertNum(5)
 console.log(`The median is: ${medianOfAStream.findMedian()}`)
 medianOfAStream.insertNum(4)
 console.log(`The median is: ${medianOfAStream.findMedian()}`)
+
+/*
+Time Complexity of Insert: O(log n)
+Time Complexity of Find Median: O(1)
+Space Complexity: O(n)
+
+Took a second to wrap the head around, but the idea is we use two heaps
+to track our numbers: the smaller half in a maxHeap, the larger half in a
+minHeap. If we have an odd number of numbers, we make sure to keep the extra
+number in our maxHeap -- its topmost number will be our median. If ever our
+maxHeap has two more numbers than our minHeap, we transfer the topmost
+number to the minHeap. And if at any point the minHeap becomes larger than
+the maxHeap, we transfer the topmost number of the minHeap to the maxHeap.
+
+That way, insertion will always be O(log n) and median access will be
+constant.
+*/
