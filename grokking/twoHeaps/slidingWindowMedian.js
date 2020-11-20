@@ -33,7 +33,7 @@ const Heap = require('collections/heap');
 class SlidingWindowMedian {
   constructor() {
     this.maxHeap = new Heap([], null, (a, b) => a - b);
-    this.minHeap = newHeap([], null, (a, b) => b - a);
+    this.minHeap = new Heap([], null, (a, b) => b - a);
   }
 
   findSlidingWindowMedian(nums, k) {
@@ -77,3 +77,11 @@ class SlidingWindowMedian {
     }
   }
 }
+
+let slidingWindowMedian = new SlidingWindowMedian();
+result = slidingWindowMedian.findSlidingWindowMedian([1, 2, -1, 3, 5], 2);
+console.log(`Sliding window medians are: ${result}`);
+
+slidingWindowMedian = new SlidingWindowMedian();
+result = slidingWindowMedian.findSlidingWindowMedian([1, 2, -1, 3, 5], 3);
+console.log(`Sliding window medians are: ${result}`);
