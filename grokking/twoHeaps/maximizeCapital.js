@@ -58,5 +58,12 @@ function findMaximumCapital(capital, profits, numberOfProjects, initialCapital) 
 console.log(`Maximum capital: ${findMaximumCapital([0, 1, 2], [1, 2, 3], 2, 1)}`);
 console.log(`Maximum capital: ${findMaximumCapital([0, 1, 2, 3], [1, 2, 3, 5], 3, 0)}`);
 
+/*
+Time: O(n log n + k log n)
+Space: O(n)
 
+Idea here is to always keep track of the maximum profit we can obtain
+with our current capital. We use the minHeap to keep track of capital
+and maxHeap to keep track of maximum we can at this point in time.
+*/
 
