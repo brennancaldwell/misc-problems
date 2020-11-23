@@ -32,8 +32,8 @@ After the completion of the two projects, our total capital will be 6 (1+2
 const Heap = require('collections/heap');
 
 function findMaximumCapital(capital, profits, numberOfProjects, initialCapital) {
-  const minCapitalHeap = new Heap([], null, (a, b) => a[0] - b[0]);
-  const maxProfitHeap = new Heap([], null (a, b) => b[0] - a[0]);
+  const minCapitalHeap = new Heap([], null, (a, b) => b[0] - a[0]);
+  const maxProfitHeap = new Heap([], null, (a, b) => a[0] - b[0]);
 
   for (let i = 0; i < profits.length; i++) {
     minCapitalHeap.push([capital[i], i]);
