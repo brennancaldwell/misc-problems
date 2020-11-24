@@ -55,3 +55,8 @@ function findNextInterval (intervals) {
 
   return result;
 }
+
+/*
+Time complexity: O (n log n)
+Space: O(n)
+*/
