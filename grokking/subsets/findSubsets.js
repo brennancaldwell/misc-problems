@@ -23,3 +23,8 @@ function findSubsets(nums) {
 
 console.log(findSubsets([1, 3]))
 console.log(findSubsets([1, 5, 3]))
+
+/*
+Time O(n * 2^n)
+Space: O(n * 2^n)
+*/
