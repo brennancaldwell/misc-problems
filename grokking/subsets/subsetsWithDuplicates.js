@@ -30,4 +30,10 @@ function findSubsets(nums) {
   }
 
   return subsets;
-}
+};
+
+
+/*
+Time: O(n * 2^n)
+Space: O(n * 2^n)
+*/
