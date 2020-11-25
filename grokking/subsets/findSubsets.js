@@ -15,7 +15,11 @@ function findSubsets(nums) {
       subset.push(current);
       subsets.push(subset);
     }
+    console.log(subsets)
   }
   return subsets;
 }
 
+
+console.log(findSubsets([1, 3]))
+console.log(findSubsets([1, 5, 3]))
