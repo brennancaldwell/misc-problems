@@ -19,3 +19,31 @@ function findPermutations(nums) {
   }) (nums, 0, []);
   return result;
 };
+
+/*
+Time: O(N * N!)
+Space: O(N * N!)
+
+Non-recursive solution!
+
+function findPermutations (nums) {
+  let result = [], permutations = [];
+  permutations.push([]);
+  for (let i = 0; i < nums.length; i++) {
+    const currentNum = nums[i];
+    for (let p = 0; p < permutations.length; p++) {
+      const oldPerm = permutations.shift();
+      for (let j = 0; j < oldPerm.length + 1; j++) {
+        const newPerm = oldPerm.slice();
+        newPerm.splice(j, 0, currentNum);
+        if (newPerm.length === nums.length) {
+          result.push(newPerm);
+        } else {
+          permutations.push(newPerm);
+        }
+      }
+    }
+  }
+  return result;
+}
+*/
