@@ -21,3 +21,40 @@ function generateValidParentheses(num) {
 
   return result;
 };
+
+/*
+Time: O(N * 2^N)
+Space: O(2^N)
+
+Non-recursive solution:
+
+class ParensString {
+  constructor(str, open, close) {
+    this.str = str;
+    this.open = open;
+    this.close = close;
+  }
+}
+
+function generateValidParentheses(num) {
+  const result = [], queue = [];
+  queue.push(new ParensString('', 0, 0));
+
+  while (queue.length) {
+    const parens = queue.shift();
+
+    if (parens.open === num && parens.close === num) {
+      result.push(parens.str);
+    } else {
+      if (parens.open < num) {
+        queue.push(new ParensString(`${parens.string}(`, parens.open + 1, parens.close));
+      }
+      if (parens.close < parens.open) {
+        queue.push(new ParensString(`${parens.string})`, parens.open, parens.close + 1));
+      }
+    }
+  }
+
+  return result;
+}
+*/
