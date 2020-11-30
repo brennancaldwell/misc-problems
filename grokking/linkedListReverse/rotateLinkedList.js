@@ -6,7 +6,7 @@ LinkedList to the right by ‘k’ nodes.
 */
 
 function rotate(head, rotations) {
-  if (rotations <= 0 || head = null || head.next === null) return head;
+  if (rotations <= 0 || head === null || head.next === null) return head;
 
   let i = 0, current = head, oldHead = head;
 
