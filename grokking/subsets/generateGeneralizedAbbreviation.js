@@ -32,3 +32,8 @@ function generateGeneralizedAbbreviation(word) {
 
   return result;
 }
+
+/*
+Time O(N * 2^N)
+Space O(N * 2^N)
+*/
