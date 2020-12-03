@@ -37,9 +37,9 @@ function evaluateExpression(input, expressionMap = {}) {
             const rightVal = right[y];
 
             if (char === '-') result.push(leftVal - rightVal);
-            if (char === '+') result.push(leftVal + rightVal);
-            if (char === '/') result.push(leftVal / rightVal);
-            if (char === '*') result.push(leftVal * rightVal);
+            else if (char === '+') result.push(leftVal + rightVal);
+            else if (char === '/') result.push(leftVal / rightVal);
+            else if (char === '*') result.push(leftVal * rightVal);
           }
         }
       }
@@ -49,3 +49,8 @@ function evaluateExpression(input, expressionMap = {}) {
   expressionMap[input] = result;
   return result;
 }
+
+/*
+Time O(N * 2^N)
+Space O(2^N)
+*/
