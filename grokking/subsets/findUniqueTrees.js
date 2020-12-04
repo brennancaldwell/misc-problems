@@ -41,3 +41,8 @@ function findTreesRecursive(start, end) {
 
   return result;
 }
+
+/*
+Time O(n * 2^n)
+Space O(2^n)
+*/
